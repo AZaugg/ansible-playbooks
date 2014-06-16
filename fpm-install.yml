@@ -8,12 +8,7 @@
    gather_facts: yes
    sudo: yes
    vars:
-     proxy_protocol: http
-     proxy_username: USERNAME
-     proxy_password: PASSWORD
-     proxy_address: itproxy-farm.toll.com.au
-     proxy_port: 8080
-     proxy: "{{proxy_protocol}}://{{proxy_username}}:{{proxy_password}}@{{proxy_address}}:{{proxy_port}}"
+     proxy: lookup('env','http_proxy')
 
    tasks:
      - name: DEB - Install ruby-dev pacakge
