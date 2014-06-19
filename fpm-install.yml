@@ -25,6 +25,6 @@
      - name: Install Ruby GEM
        environment:
           http_proxy: "{{proxy}}"
-       command: bash -lc "gem install fpm"
+       gem: name=fpm state=latest
 
 
